@@ -42,7 +42,10 @@ linear_model = W * x + b
 # To initialize all the variables in a TensorFlow program, you must explicitly call a special operation as below.
 init = tf.global_variables_initializer()
 sess.run(init)
-
+# It is important to realize init is a handle to the TensorFlow sub-graph that initializes all the global variables.
+# Until we call sess.run, the variables are uninitialized.
+# x is a placeholder and  we can evaluate linear_model for several values of x simultaneously as follows
+print(sess.run(linear_model, {x: [1, 2, 3, 4]}))
 
 
 
