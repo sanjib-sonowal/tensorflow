@@ -8,5 +8,7 @@ e = tf.multiply(c, d, "mul_e")
 
 sess = tf.Session()
 print(sess.run(e))
+sess.close()
+
 
 

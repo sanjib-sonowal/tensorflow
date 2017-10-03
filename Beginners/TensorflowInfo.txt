@@ -1,0 +1,40 @@
+TENSOR DIMENSIONS
+t_0 = 10 # Treated as 0-Dimension tensor or "scalar"
+t_1 = [1, 2, 3] # Treated as 1-Dimension tensor or "vector"
+t_2 = [[True, True, False] # Treated as 2-Dimension tensor or "matrix"
+
+Note:
+Definition: NumPy is a computational package for manipulating n-dimensional array.
+
+TENSORBOARD
+# Command to write to tensorboard
+>>tensorboard --logdir="./mygraph/"
+
+TENSOR SHAPE
+s_1 = [3]
+e.g., [1, 2, 3] # Shape describe a vector of length 3.
+
+s-2 = (3, 2)
+e.g., [[1, 2], [3, 4], [5, 6]] # Shape describe a 3-by-2 matrix.
+
+TENSOR SESSION
+Environment where tensoflow operation are evaluated and executed.
+# Using the close() methods.
+sess = tf.Session()
+sess.run(...)
+sess.close()
+
+# Using the context manager. No need to call close()
+with tf.Session() as sess:
+    writer.close()
+
+# Using the session as a default inside 'with' block
+sess = tf.Session()
+with sess.as_default():shape=none
+    a.eval()
+sess.close()
+
+PLACEHOLDER
+Are used for user inputs.
+x = tf.placeholder(dtype, shape=none, name=None)
+
